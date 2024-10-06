@@ -1,0 +1,195 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Special Elite', monospace;
+    /*background-image: url('fondo.jpg'); /* Imagen de fondo de la mesa */
+    background-color: rgb(255, 255, 255);
+    background-size: cover; /* La imagen cubrirá todo el fondo */
+    background-position: center;
+    background-attachment: fixed; /* Mantener el fondo de la mesa fijo */
+    color: #000; /* Texto en negro */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center; /* Centra el contenedor en la página */
+    padding: 2rem; /* Espacio alrededor del contenedor */
+    min-height: 100vh; /* Asegura que el body siempre ocupe el alto completo */
+}
+
+.container {
+    width: 800px; /* Ancho máximo del "folio" */
+    background-color: #ffffff; /* Fondo blanco del folio */
+    padding: 2rem; /* Espacio interno del "folio" */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para simular profundidad */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: auto;
+    position: relative;
+    z-index: 10; /* Asegura que el folio esté por encima del fondo */
+}
+
+a {
+    color: #000; /* Links en negro */
+    text-decoration: none;
+}
+
+header {
+    background-color: #fff; /* Fondo blanco */
+    padding: 1rem;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+/* Sección Hero */
+#hero {
+    text-align: left;
+    padding: 2rem 0; /* Espaciado superior e inferior */
+}
+
+.hero-content {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.hero-top {
+    display: flex;
+    align-items: center;
+    position: relative; /* Para posicionar la chincheta respecto a este contenedor */
+    margin-bottom: 1rem;
+}
+
+.pin {
+    position: absolute; /* Posiciona la chincheta en la esquina superior */
+    top: -20px; /* Ajusta la posición según sea necesario */
+    left: 15px; /* Ajusta la posición según sea necesario */
+    width: 60px; /* Tamaño de la chincheta */
+    height: 60px; /* Mantener la proporción */
+    z-index: 20; /* Asegura que la chincheta esté por encima de otros elementos */
+}
+
+.profile-pic {
+    width: 120px; /* Tamaño de la imagen redonda */
+    height: 120px; /* Mantener la proporción */
+    border-radius: 0%; /* Hace que la imagen sea redonda */
+    margin-right: 1rem; /* Espacio entre imagen y texto */
+    border: 4px solid white; /* Borde blanco para simular un papel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para simular profundidad */
+    position: relative; /* Permite posicionar pseudo-elementos */
+    top: -10px; /* Mueve la imagen hacia arriba para simular que está pegada */
+    transform: rotate(-5deg); /* Efecto de subrayado ligeramente inclinado */
+}
+
+.availability {
+    font-size: 1.1rem; /* Tamaño de la fuente más pequeño */
+    font-weight: bold;
+    position: relative;
+    color: black; /* Aseguramos que el color del texto sea negro */
+    display: inline-block; /* Permite que el pseudo-elemento se alinee con el texto */
+}
+
+.availability::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Ajuste para el subrayado */
+    width: 100%;
+    height: 3px; /* Grosor del subrayado */
+    background-color: #00ff11; /* Color amarillo para el subrayado */
+    transform: rotate(-2deg); /* Efecto de subrayado ligeramente inclinado */
+}
+
+.subtitle {
+    font-size: 1rem; /* Tamaño más pequeño para el subtítulo */
+    margin-bottom: 0.5rem; /* Menos margen */
+}
+
+.location {
+    font-size: 0.8rem; /* Tamaño más pequeño para la ubicación */
+    color: #000;
+    margin-bottom: 0.5rem; /* Menos margen */
+}
+
+.social-links a {
+    margin-right: 0.5rem; /* Espacio entre iconos más pequeño */
+    font-size: 1.2rem; /* Tamaño más pequeño para iconos */
+}
+
+.social-links a:hover {
+    color: #555; /* Efecto hover */
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin: 1rem 0;
+    font-size: 1rem; /* Ajustar el tamaño del párrafo */
+}
+
+#about, #projects, #contact {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+footer {
+    text-align: center; /* Centro el texto en el pie de página */
+    padding: 2rem;
+    font-size: 0.8rem;
+}
+
+footer p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .hero-top {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .profile-pic {
+        margin-bottom: 1rem; /* Espaciado debajo de la imagen */
+    }
+
+    .availability {
+        font-size: 1.2rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 2rem; /* Reduce el tamaño del nombre en pantallas pequeñas */
+    }
+
+    p {
+        font-size: 1rem; /* Reduce el tamaño del párrafo en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column; /* Cambia a columna en pantallas muy pequeñas */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Espaciado vertical entre los elementos de navegación */
+    }
+}
