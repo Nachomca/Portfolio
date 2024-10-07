@@ -14,9 +14,9 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="#about">Sobre mí</a></li>
                     <li><a href="#experience">Experiencia laboral</a></li>
                     <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -25,12 +25,13 @@
         <section id="hero">
             <div class="hero-content">
                 <div class="hero-top">
-                    <img src="pin.webp" alt="Chincheta" class="pin">
+                    <!--<img src="pin.webp" alt="Chincheta" class="pin">-->
                     <img src="foto.png" alt="Tu foto" class="profile-pic">
                     <span class="availability">Disponible para trabajar</span>
                 </div>
-                <h2>Ignacio Martínez de Carvajal Andrés</h2>
-                <p class="subtitle">Desarrollador Web | Java</p>
+                <h2>Hola! Soy Ignacio</h2>
+                <p class="subtitle">+ de 4 años de experiencia. Desarrollador freelance.</p>
+                <p class="subtitle">Especializado en web y Java.</p>
                 <p class="location"><i class="fas fa-globe"></i> Sevilla, España</p>
                 <div class="social-links">
                     <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
@@ -41,9 +42,11 @@
             </div>
         </section>
 
-        <section id="about">
-            <h3>Sobre mí</h3>
-            <p>[Un breve resumen de tu experiencia y habilidades]</p>
+        <section id="experience">
+            <h3>Experiencia laboral</h3>
+            <div class="experience-list">
+                <!-- Aquí irán tus experiencias -->
+            </div>
         </section>
 
         <section id="projects">
@@ -51,6 +54,11 @@
             <div class="project-list">
                 <!-- Aquí irán tus proyectos -->
             </div>
+        </section>
+
+        <section id="about">
+            <h3>Sobre mí</h3>
+            <p>[Un breve resumen de tu experiencia y habilidades]</p>
         </section>
 
         <section id="contact">
@@ -62,5 +70,24 @@
             <p>&copy; 2024 Ignacio Martínez de Carvajal Andrés</p>
         </footer>
     </div>
+
+    <div class="noise"></div>
+<div class="scanlines"></div>
+
+<script>
+    // Cambia la opacidad de las líneas de escaneo y el ruido de fondo
+    setInterval(() => {
+        const scanlinesDiv = document.querySelector('.scanlines');
+        const noiseDiv = document.querySelector('.noise');
+        
+        // Cambiar la opacidad de las líneas de escaneo
+        scanlinesDiv.style.opacity = Math.random() * 0.1; // Cambia entre 0 y 0.2
+
+        // Cambiar la opacidad de la interferencia
+        noiseDiv.style.opacity = Math.random() * 0.025; // Cambia entre 0 y 0.1
+    }, 1); // Cambia cada 200 ms
+</script>
+
+    
 </body>
 </html>
