@@ -5,11 +5,17 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'public-pixel'; /* Cambia esto por el nombre que desees usar */
+    src: url('public-pixel.woff') format('truetype'); /* Asegúrate de usar la ruta correcta */
+}
+
 /* Estilo base */
 body {
     background-color: #1a1a1a; /* Fondo oscuro */
     color: #ff7518; /* Color del texto */
-    font-family: 'Special Elite', monospace; /* Fuente estilo máquina de escribir */
+    font-family: "public-pixel", monospace; /* Fuente estilo ordenador antiguo */
+    font-size: 0.8rem; /* Tamaño de fuente general más pequeño */
 }
 
 /* Efecto de ruido */
@@ -21,40 +27,20 @@ body {
     height: 100%;
     pointer-events: none; /* Permite hacer clic en el contenido por debajo */
     z-index: 5; /* Asegúrate de que esté por encima del contenido */
-    background: rgba(255, 255, 255, 0.1); /* Color de fondo con opacidad */
+    background-image: linear-gradient(transparent, rgba(255, 255, 255, 0.05), transparent);
+    background-size: 100% 10px; /* Espaciado de las líneas, más amplio para un efecto más sutil */
+    animation: moveNoise 2.15s linear infinite; /* Animación de movimiento más lenta */
 }
 
-/* Efecto de scanlines */
-.scanlines {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 5px,
-        rgba(255, 255, 255, 0.1) 5px,
-        rgba(255, 255, 255, 0.1) 6px
-    );
-    opacity: 0; /* Inicialmente invisible */
-    z-index: 6; /* Asegúrate de que esté por encima del contenido */
-}
-
-/* Ajustes en el scanlines */
-.scanlines {
-    animation: flicker 0.1s infinite; /* Animación para parpadear */
-}
-
-@keyframes flicker {
-    0%, 100% { opacity: 0.1; }
-    50% { opacity: 0.2; }
+/* Animación de movimiento */
+@keyframes moveNoise {
+    0% { background-position-y: 0; } /* Comienza en la parte superior */
+    100% { background-position-y: 100%; } /* Se mueve hasta la parte inferior */
 }
 
 
 .container {
-    width: 800px;
+    width: 65%;
     /*background-color: #222; /* Fondo más oscuro para el contenido */
     padding: 2rem;
     border-radius: 5px;
@@ -70,9 +56,13 @@ a {
 }
 
 header {
-    background-color: #222;
-    padding: 1rem;
+    border: 2px solid #ff7518;
+    border-radius: 20%;
+    padding: 0.75rem;
     text-align: left;
+    font-size: 0.6rem;
+    margin-left: 20%;
+    margin-right: 20%
 }
 
 nav ul {
@@ -108,7 +98,7 @@ nav ul li {
     border-radius: 50%;
     margin-right: 1rem;
     border: 2px solid #ff7518;
-    filter: blur(1.5px); /* Desenfoque suave para efecto retro */
+    /*  filter: blur(1.5px); /* Desenfoque suave para efecto retro */
     position: relative;
     top: -10px;
 }
@@ -141,15 +131,106 @@ nav ul li {
     color: #ffb366; /* Hover más claro */
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
+    text-shadow: 0 0 5px rgba(255, 117, 24, 0.2), /* Sombra difusa en color naranja */
+                 0 0 10px rgba(255, 117, 24, 0.1); /* Sombra más difusa */
+}
+
+h1, h3 {
     font-weight: normal;
     color: #ff7518;
+    font-size: 1rem; /* Tamaño de fuente de encabezados más pequeño */
+}
+
+.subtitle {
+    font-size: 0.8rem; /* Tamaño de subtítulos más pequeño */
 }
 
 p {
     margin: 1rem 0;
-    font-size: 1rem;
-    color: #ffb366; /* Texto de párrafos en naranja más claro */
+    font-size: 0.8rem; /* Tamaño de párrafos más pequeño */
+    padding-bottom: 0.5rem;
+    line-height: 1.5; /* Ajusta el espacio entre líneas */
+}
+
+#about, #projects, #experience {
+    padding: 6rem 3rem;
+    padding-left: 0;
+    text-align: left;
+}
+
+#about {
+    padding: 4rem 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+}
+
+.about-content {
+    display: flex; /* Usar flexbox para alinear la imagen y el texto */
+    align-items: center; /* Alinear verticalmente */
+    color: #ffb366;
+}
+
+.about-pic {
+    width: 120px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-left: 20rem; /* Espacio entre la imagen y el texto */
+    border-radius: 10%; /* Esquinas redondeadas */
+    border: 2px solid #ffb366;
+    transform: rotate(5deg);
+}
+
+.about-text {
+    max-width: 600px; /* Limita el ancho del texto */
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos */
+    margin-top: 2rem;
+}
+
+.skill-item {
+    position: relative;
+    width: 80px; /* Tamaño fijo para los recuadros */
+    height: 80px; /* Tamaño fijo para los recuadros */
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ff7518; /* Borde naranja */
+    border-radius: 10%; /* Esquinas redondeadas */
+    background-color: rgba(255, 117, 24, 0.1); /* Fondo sutil */
+    transition: transform 0.3s, background-color 0.3s; /* Transición suave */
+    overflow: hidden; /* Para que el texto no se desborde */
+}
+
+.skill-item:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
+    background-color: rgba(255, 117, 24, 0.3); /* Cambia el color de fondo al pasar el cursor */
+}
+
+.skill-item i {
+    font-size: 2.5rem; /* Ajusta el tamaño del icono aquí */
+    color: #ff7518; /* Color del icono */
+}
+
+.skill-item .skill-name {
+    position: absolute;
+    bottom: -20px; /* Oculta el texto debajo del recuadro */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el texto */
+    color: #fff; /* Color del texto */
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: bottom 0.3s; /* Transición suave */
+}
+
+.skill-item:hover .skill-name {
+    bottom: 10px; /* Mueve el texto hacia arriba al pasar el cursor */
 }
 
 footer {
@@ -162,25 +243,33 @@ footer {
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
     .hero-top {
-        flex-direction: column;
+        flex-direction: column; /* Cambiar a columna para pantallas más pequeñas */
         align-items: center;
     }
 
-    .profile-pic {
-        margin-bottom: 1rem;
-    }
-
     h2 {
-        font-size: 2rem;
+        font-size: 1.5rem; /* Tamaño de h2 más pequeño */
     }
 }
 
 @media (max-width: 480px) {
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Cambiar a columna en móviles */
     }
 
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0.5rem 0; /* Espacio vertical */
+    }
+
+    h2, h3 {
+        font-size: 1.2rem; /* Tamaño de encabezados más pequeño */
+    }
+
+    p {
+        font-size: 0.6rem; /* Tamaño de párrafos más pequeño */
+    }
+
+    .social-links a {
+        font-size: 1rem; /* Tamaño de iconos de redes sociales más pequeño */
     }
 }

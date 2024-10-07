@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio - Ignacio Martínez de Carvajal Andrés</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"> <!-- Fuente estilo máquina de escribir -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome para iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
             <nav>
                 <ul>
-                    <li><a href="#experience">Experiencia laboral</a></li>
+                    <li><a href="#experience">Experiencia</a></li>
                     <li><a href="#projects">Proyectos</a></li>
                     <li><a href="#about">Sobre mí</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="mailto:namarcaran@gmail.com">Contacto</a></li>
                 </ul>
             </nav>
         </header>
@@ -27,44 +27,91 @@
                 <div class="hero-top">
                     <!--<img src="pin.webp" alt="Chincheta" class="pin">-->
                     <img src="foto.png" alt="Tu foto" class="profile-pic">
-                    <span class="availability">Disponible para trabajar</span>
+                    <!--<span class="availability">Disponible para trabajar</span>-->
+                    <h2>Hola! Soy Nacho</h2>
                 </div>
-                <h2>Hola! Soy Ignacio</h2>
                 <p class="subtitle">+ de 4 años de experiencia. Desarrollador freelance.</p>
                 <p class="subtitle">Especializado en web y Java.</p>
                 <p class="location"><i class="fas fa-globe"></i> Sevilla, España</p>
                 <div class="social-links">
                     <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="tel:+34600000000"><i class="fas fa-phone"></i></a>
-                    <a href="mailto:tuemail@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+34653123344"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:namarcaran@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </section>
 
         <section id="experience">
-            <h3>Experiencia laboral</h3>
+            <h2><i class="fa-solid fa-folder"></i> Experiencia laboral</h2>
             <div class="experience-list">
                 <!-- Aquí irán tus experiencias -->
             </div>
         </section>
 
         <section id="projects">
-            <h3>Proyectos</h3>
+            <h2><i class="fa-solid fa-code"></i> Proyectos</h2>
             <div class="project-list">
                 <!-- Aquí irán tus proyectos -->
             </div>
         </section>
 
         <section id="about">
-            <h3>Sobre mí</h3>
-            <p>[Un breve resumen de tu experiencia y habilidades]</p>
+            <h2><i class="fa-solid fa-user"></i> Sobre mí</h2>
+            <div class="about-content">
+                
+                <div class="about-text">
+                    <p>Me llamo Ignacio, pero mis amigos me llaman Nacho. Empecé en la programación siendo un niño, con mi padre enseñándome los primeros pasos. Actualmente soy desarrollador fullstack y trabajo como freelance.</p>
+                    <p>Algunos de mis trabajos incluyen desde realizar páginas web hasta aplicaciones de gestión avanzadas y personalizadas.</p>
+                    <p>Me apasionan los retos y crear soluciones innovadoras, dinámicas y de gran calidad. Si quieres saber más, no dudes en contactar conmigo o en echar un vistazo por mis redes!</p>
+                </div>
+                <img src="foto.png" alt="Tu foto" class="about-pic">
+            </div>
         </section>
 
-        <section id="contact">
-            <h3>Contacto</h3>
-            <p>[Correo o formulario de contacto]</p>
+        <section id="habilities">
+            <h2><i class="fa-solid fa-gears"></i> Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <span class="skill-name">JS</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-brands fa-bootstrap"></i>
+                    <span class="skill-name">Bootstrap</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-code"></i>
+                    <span class="skill-name">JQuery</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-java"></i>
+                    <span class="skill-name">Java</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-database"></i>
+                    <span class="skill-name">BD</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-node-js"></i>
+                    <span class="skill-name">Node.js</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="skill-name">GIT</span>
+                </div>
+                <!-- Añade más habilidades según sea necesario -->
+            </div>
         </section>
+        
 
         <footer>
             <p>&copy; 2024 Ignacio Martínez de Carvajal Andrés</p>
@@ -72,21 +119,7 @@
     </div>
 
     <div class="noise"></div>
-<div class="scanlines"></div>
 
-<script>
-    // Cambia la opacidad de las líneas de escaneo y el ruido de fondo
-    setInterval(() => {
-        const scanlinesDiv = document.querySelector('.scanlines');
-        const noiseDiv = document.querySelector('.noise');
-        
-        // Cambiar la opacidad de las líneas de escaneo
-        scanlinesDiv.style.opacity = Math.random() * 0.1; // Cambia entre 0 y 0.2
-
-        // Cambiar la opacidad de la interferencia
-        noiseDiv.style.opacity = Math.random() * 0.025; // Cambia entre 0 y 0.1
-    }, 1); // Cambia cada 200 ms
-</script>
 
     
 </body>
