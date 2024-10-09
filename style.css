@@ -159,6 +159,120 @@ p {
     text-align: left;
 }
 
+/* Estilos para la línea de tiempo */
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 2rem;
+    border-left: 2px solid #ff7518; /* Línea vertical */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-dot {
+    width: 15px;
+    height: 15px;
+    background-color: #ff7518;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px; /* Ajustar para alinear con la línea */
+}
+
+.timeline-content {
+    margin-left: 2rem; /* Espacio entre el punto y el contenido */
+}
+
+.timeline-date {
+    font-size: 0.7rem;
+    color: #ffb366;
+    font-style: italic; /* Estilo para resaltar las fechas */
+    margin-right: 1rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    color: #ffb366;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #ff7518;
+}
+
+/* Animación para resaltar al pasar el cursor */
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    background-color: #ffb366;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#projects {
+    padding: 6rem 2rem;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.project-list {
+    margin-top: 2rem;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    /*background-color: #1a1a1a;
+    border: 2px solid #ff7518;*/
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.project-image {
+    width: 150px; /* Ajusta según tu preferencia */
+    margin-right: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-image:hover {
+    transform: scale(1.1) rotate(-5deg); /* Animación al pasar el cursor */
+}
+
+.project-details h3 {
+    color: #ffb366;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-details p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #ff7518;
+}
+
+.project-links .button {
+    background-color: #ff7518;
+    color: #1a1a1a;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 1rem;
+}
+
+.project-links .button:hover {
+    background-color: #ffb366; /* Cambia el color en hover */
+}
+
 #about {
     padding: 4rem 2rem;
     padding-left: 0;
