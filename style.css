@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: 'public-pixel'; /* Cambia esto por el nombre que desees usar */
-    src: url('public-pixel.woff') format('truetype'); /* Asegúrate de usar la ruta correcta */
+    font-family: 'public-pixel';
+    src: url('public-pixel.woff') format('truetype');
 }
 
 /* Estilo base */
@@ -26,7 +26,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Permite hacer clic en el contenido por debajo */
-    z-index: 5; /* Asegúrate de que esté por encima del contenido */
+    z-index: 5;
     background-image: linear-gradient(transparent, rgba(255, 255, 255, 0.05), transparent);
     background-size: 100% 10px; /* Espaciado de las líneas, más amplio para un efecto más sutil */
     animation: moveNoise 2.15s linear infinite; /* Animación de movimiento más lenta */
@@ -65,6 +65,18 @@ header {
     margin-right: 20%
 }
 
+/* Menú desplegable en móviles */
+.menu-icon {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    font-size: 2rem;
+    color: #ff7518;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 20;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -79,6 +91,10 @@ nav ul li {
 #hero {
     text-align: left;
     padding: 2rem 0;
+}
+
+.fa-solid fa-user-tie {
+    font-size: 5rem;
 }
 
 .hero-content {
@@ -112,6 +128,12 @@ nav ul li {
     margin-right: 0.5rem;
     display: inline-block;
     text-align: left;
+    
+}
+
+pre {
+    text-shadow: 0 0 5px rgba(255, 117, 24, 0.2), /* Sombra difusa en color naranja */
+                 0 0 10px rgba(255, 117, 24, 0.1); /* Sombra más difusa */
 }
 
 .availability {
@@ -247,7 +269,7 @@ p {
 }
 
 .project-image {
-    width: 450px; /* Ajusta según tu preferencia */
+    width: 450px;
     margin-right: 2rem;
     transition: transform 0.3s ease-in-out;
     filter: contrast(1.2) brightness(0.9) saturate(0.6) blur(0.5px); /* Efectos de imagen */
@@ -382,12 +404,105 @@ footer {
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
     .hero-top {
-        flex-direction: column; /* Cambiar a columna para pantallas más pequeñas */
+        flex-direction: column; /* Columna en pantallas pequeñas */
         align-items: center;
+        text-align: center; /* Centrar el contenido */
     }
 
-    h2 {
-        font-size: 1.5rem; /* Tamaño de h2 más pequeño */
+    .profile-pic {
+        margin-right: 0; /* Elimina el margen en pantallas pequeñas */
+        margin-bottom: 1rem; /* Espacio entre la imagen y el texto */
+    }
+
+    .project-item {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar elementos */
+    }
+
+    .project-image {
+        width: 100%; /* Asegurar que las imágenes no sean más anchas que el contenedor */
+        margin-right: 0; /* Eliminar el margen en móviles */
+        margin-bottom: 1rem; /* Añadir espacio entre la imagen y el texto */
+    }
+
+    .project-details {
+        text-align: center; /* Centrar el texto */
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Coloca el contenido en columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        margin-left: 0; /* Elimina el margen lateral */
+    }
+
+    .timeline-dot {
+        left: 50%; /* Centra el punto */
+        transform: translateX(-50%); /* Ajusta para que esté alineado */
+    }
+
+    .timeline-content {
+        text-align: center; /* Centra el texto */
+        margin-left: 0; /* Elimina el margen */
+        margin-top: 1rem; /* Añadir espacio superior */
+    }
+
+    .skills-container {
+        justify-content: center; /* Centrar los íconos en pantallas pequeñas */
+    }
+
+    .skill-item {
+        width: 60px; /* Tamaño más pequeño para los íconos en móviles */
+        height: 60px;
+    }
+
+    .skill-item i {
+        font-size: 2rem; /* Reducir el tamaño del ícono */
+    }
+
+    p {
+        font-size: 0.6rem; /* Reducir el tamaño de los párrafos en móviles */
+    }
+
+    .social-links a {
+        font-size: 1rem; /* Ajustar el tamaño de los íconos de redes sociales */
+    }
+
+    footer {
+        padding: 1rem; /* Reducir el padding del footer */
+    }
+
+    nav ul {
+        display: none; /* Oculta el menú tradicional en pantallas pequeñas */
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #1a1a1a; /* Fondo oscuro del menú desplegable */
+        width: 200px; /* Ancho del menú */
+        height: 100vh; /* Toma toda la altura de la pantalla */
+        justify-content: flex-start;
+        padding-top: 4rem; /* Añade espacio en la parte superior para que no se superponga con el icono */
+        z-index: 10;
+        transition: transform 0.3s ease-in-out; /* Animación de entrada/salida */
+        transform: translateX(100%); /* Mueve el menú fuera de la pantalla por defecto */
+    }
+
+    nav ul li {
+        margin: 1rem 0; /* Margen vertical para los ítems del menú */
+    }
+
+    /* Muestra el icono del menú hamburguesa en pantallas pequeñas */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Estilo para mostrar el menú al abrirlo */
+    nav ul.active {
+        transform: translateX(0); /* Mueve el menú dentro de la pantalla */
+    }
+
+    header {
+        border: none;
     }
 }
 

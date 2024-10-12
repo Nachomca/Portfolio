@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio - Ignacio Martínez de Carvajal Andrés</title>
+    <title>Portfolio - Ignacio MCA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome para iconos -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicoon.png">
 </head>
 <body>
     <div class="container">
         <header>
-            <nav>
+            <div class="menu-icon" id="menu-icon">
+                &#9776; <!-- Símbolo del menú hamburguesa -->
+            </div>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#experience">Experiencia</a></li>
                     <li><a href="#projects">Proyectos</a></li>
@@ -24,15 +28,15 @@
 
         <section id="hero">
             <div class="hero-content">
-                    <pre class="ascii-logo">
-I PPP
-I P  P
-I PPP
-I P
-I P
-                    </pre>
+                    <!--<pre class="ascii-logo">
+  *      *   I PPP  *
+ *      *    I P  P  *
+*      *     I PPP    *      
+ *    *      I P     *      
+  *  *       I P    *      
+                    </pre>-->
                 <div class="hero-top">
-                    <h2>Hola! Soy Nacho</h2>
+                    <h2><i class="fa-solid fa-user-tie"></i> Hola! Soy Nacho</h2>
                 </div>
                 <p class="subtitle">+ de 4 años de experiencia. Desarrollador freelance.</p>
                 <p class="subtitle">Especializado en web y Java.</p>
@@ -70,7 +74,6 @@ I P
                         <p>Doy clases particulares a niños y adultos de C#, Java y desarrollo web.</p>
                     </div>
                 </div>
-                <!-- Añadir más experiencias aquí -->
             </div>
         </section>        
 
@@ -164,7 +167,6 @@ I P
                     <i class="fa-brands fa-github"></i>
                     <span class="skill-name">GIT</span>
                 </div>
-                <!-- Añade más habilidades según sea necesario -->
             </div>
         </section>
         
@@ -175,8 +177,8 @@ I P
     </div>
 
     <div class="noise"></div>
-
-
     
+    <script src="script.js"></script> 
+
 </body>
 </html>
