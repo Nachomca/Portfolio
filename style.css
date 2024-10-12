@@ -90,6 +90,7 @@ nav ul li {
     align-items: center;
     position: relative;
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .profile-pic {
@@ -101,6 +102,16 @@ nav ul li {
     /*  filter: blur(1.5px); /* Desenfoque suave para efecto retro */
     position: relative;
     top: -10px;
+}
+
+.ascii-logo {
+    font-family: monospace; /* Fuente estilo ordenador antiguo */
+    font-size: 0.8rem; /* Tamaño aún más pequeño para el logo */
+    line-height: 1; /* Mantener compacta la altura de las líneas */
+    color: #ff7518; /* Naranja retro */
+    margin-right: 0.5rem;
+    display: inline-block;
+    text-align: left;
 }
 
 .availability {
@@ -236,13 +247,19 @@ p {
 }
 
 .project-image {
-    width: 150px; /* Ajusta según tu preferencia */
+    width: 450px; /* Ajusta según tu preferencia */
     margin-right: 2rem;
     transition: transform 0.3s ease-in-out;
+    filter: contrast(1.2) brightness(0.9) saturate(0.6) blur(0.5px); /* Efectos de imagen */
+    border-radius: 20px;
+    image-rendering: pixelated; /* Estilo pixelado para toque retro */
+    background: rgba(255, 255, 255, 0.1); /* Simula un efecto de pantalla difusa */
+
 }
 
 .project-image:hover {
     transform: scale(1.1) rotate(-5deg); /* Animación al pasar el cursor */
+    filter: none; /* Elimina todos los filtros */
 }
 
 .project-details h3 {
@@ -293,6 +310,14 @@ p {
     border-radius: 10%; /* Esquinas redondeadas */
     border: 2px solid #ffb366;
     transform: rotate(5deg);
+    image-rendering: pixelated; /* Estilo pixelado para toque retro */
+    transition: transform 0.3s ease-in-out;
+    filter: contrast(1.2) brightness(0.9) saturate(0.6) blur(0.5px); /* Efectos de imagen */
+}
+
+.about-pic:hover {
+    transform: scale(1.1) rotate(0deg); /* Animación al pasar el cursor */
+    filter: none; /* Elimina todos los filtros */
 }
 
 .about-text {
